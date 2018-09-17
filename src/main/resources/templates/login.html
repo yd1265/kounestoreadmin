@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="common/header::common-header" />
+
+
+<body>
+<div class="container">
+
+<h4 class="center-block" style="text-align: center;"> Welcome to Admin Portal for KOUNESTORE</h4>
+ <hr/>
+
+<div class="row">
+
+<div class="col-xs-3 col-md-offset-4" >
+
+<div class="bg-danger" th:if="${param.error}"> Invalid Username and Password.</div>
+ <div class="bg-info" th:if="${param.logout}"> You have been logged out .</div>
+ 
+ 
+ <form th:action="@{/login}" method="post" class="form-signin">
+ 
+ <h5 class="form-signin-headline"> Please Sign in</h5>
+ 
+  <div class="form-group">
+  <label for="username" class="sr-only"> Username</label>
+  <input type="text" name="username" class="form-control" placeholder="Username" required="required" autofocus="autofocus"/>
+  </div>
+  
+  <div class="form-group">
+  <label for="password" class="sr-only"> Password</label>
+  <input type="password" name="password" class="form-control" placeholder="Password" required="required"/>
+  </div>
+  
+  <button class="btn btn-lg btn-primary btn-block " type="submit"> Login</button>
+ </form>
+ 
+ 
+ </div>
+
+</div>
+
+</div>
+
+
+<div th:replace="common/header::body-bottom-script"></div>
+	
+	
+	
+	
+</body>
+</html>

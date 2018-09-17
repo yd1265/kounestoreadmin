@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml"/>
+
+<head th:fragment="common-header">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+<title>Kounestore</title>
+
+<!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+<!-- Custom styles for this template -->
+<link th:href="@{/css/font-awesome.min.css}">
+
+
+<!-- data table -->
+<link th:href="@{/css/jquery.dataTables.min.css}">
+<link th:href="@{/css/dataTables.bootstrap.min.css}">
+
+
+
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
+</head>
+<body>
+
+
+	<div th:fragment="navbar">
+
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container-fluid"
+				style="font-size: 14px; background-color: black; border-width: 1px; border-radius: 4px;">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed"
+						data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+						aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" th:href="@{/}">Admin Portal</a>
+				</div>
+
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Book <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a th:href="@{/addBook}"> Add a New Book</a></li>
+								<li><a th:href="@{/bookList}">View book list</a></li>
+
+							</ul></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+						<li><a th:href="@{/logout}">Sign Out</a></li>
+
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+
+
+	</div>
+
+
+	<div th:fragment="footer">
+
+		<!-- Footer -->
+		<div class="container">
+			<footer class="page-footer font-small blue-grey lighten-5">
+
+				<div style="background: buttonface;">
+					<div class="container">
+
+						<div class="col-md-3 col-lg-8 col-xl-4 mx-auto mb-4">
+
+							<!-- Content -->
+							<h6 class="text-uppercase font-weight-bold">KOUNESTORE</h6>
+							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+								style="width: 60px;">
+							<p>We are an online bookstore.</p>
+
+						</div>
+
+
+						<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+							<!-- Links -->
+							<h6 class="text-uppercase font-weight-bold">Contact</h6>
+							<hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto"
+								style="width: 60px;">
+							<p>
+								<i class="fa fa-envelope mr-3"></i> kounestore@gmail.com
+							</p>
+
+
+						</div>
+
+					</div>
+
+				</div>
+		</div>
+
+		<footer>
+		<!-- Footer -->
+
+	</div>
+
+
+
+	<div th:fragment="body-bottom-script">
+		<script th:src="@{js/jquery.min.js}"></script>
+	
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/jquery.dataTables.min.js}"></script>
+        <script th:src="@{/js/dataTables.bootstrap.min.js}"></script>
+
+	</div>
+</body>
+</html>
