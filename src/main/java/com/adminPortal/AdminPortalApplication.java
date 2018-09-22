@@ -33,7 +33,7 @@ public class AdminPortalApplication implements CommandLineRunner {
 
 		Set<UserRole> userRoles = new HashSet<UserRole>();
 		Role role1 = new Role();
-		role1.setRoleId(0);
+		role1.setRoleId(1);
 		role1.setName("ROLE_ADMIN");
 		userRoles.add(new UserRole(user1, role1));
 		userService.createUser(user1, userRoles);
