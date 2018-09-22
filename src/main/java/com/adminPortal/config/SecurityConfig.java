@@ -44,7 +44,7 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 		"/addBook",
 		"/bookList",
 		"/deleteBook",
-		"/forgetPassword",
+		"/bookupdate",
 		"/myAccount",
 		"/login"
 	};
