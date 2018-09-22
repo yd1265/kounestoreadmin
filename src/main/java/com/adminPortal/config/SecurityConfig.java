@@ -43,9 +43,6 @@ public class SecurityConfig  extends WebSecurityConfigurerAdapter{
 		"/fonts/**",
 		"/addBook",
 		"/bookList",
-		"/deleteBook",
-		"/bookupdate",
-		"/myAccount",
 		"/login"
 	};
 	
