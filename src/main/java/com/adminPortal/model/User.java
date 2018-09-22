@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 
-@Entity
+@Entity(name="USER")
 public class User implements UserDetails {
 	/**
 	 * 

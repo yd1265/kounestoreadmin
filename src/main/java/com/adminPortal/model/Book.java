@@ -9,7 +9,7 @@ import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
 
-@Entity
+@Entity(name="BOOK")
 public class Book {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

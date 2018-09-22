@@ -10,7 +10,7 @@ import javax.persistence.ManyToOne;
 import com.adminPortal.model.User;
 
 
-@Entity
+@Entity(name="USER_ROLE")
 public class UserRole {
    @Id
    @GeneratedValue (strategy=GenerationType.IDENTITY)
