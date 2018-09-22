@@ -30,7 +30,8 @@ public class UserServiceImpl implements UserService{
 	public User findByUsername(String username) {
 		User user=userRepository.findByUsername(username);
 		if(user==null){
-			
+			LOG.info("Usrname not Exist");
+
 		}
 		return user;
 	}
@@ -40,7 +41,8 @@ public class UserServiceImpl implements UserService{
 	public User findByEmail(String email) {
 		User user=userRepository.findByEmail(email);
           if(user==null){
-			
+  			LOG.info("Email not Exist");
+
 		}
 		return user;
 	 

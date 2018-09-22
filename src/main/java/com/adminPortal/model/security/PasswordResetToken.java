@@ -15,7 +15,7 @@ import javax.persistence.OneToOne;
 import com.adminPortal.model.User;
 
 
-@Entity
+@Entity(name="PASSWORD_RESET_TOKEN")
 public class PasswordResetToken {
 
 	@Id
