@@ -1,8 +1,8 @@
 package com.adminPortal.service;
 import java.util.Set;
 
-import com.adminPortal.model.User;
-import com.adminPortal.model.security.UserRole;
+import com.adminPortal.domain.User;
+import com.adminPortal.domain.security.UserRole;
 
 
 public interface UserService {

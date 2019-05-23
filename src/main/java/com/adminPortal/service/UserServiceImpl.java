@@ -6,8 +6,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.adminPortal.model.User;
-import com.adminPortal.model.security.UserRole;
+import com.adminPortal.domain.User;
+import com.adminPortal.domain.security.UserRole;
 import com.adminPortal.repository.RoleRepository;
 import com.adminPortal.repository.UserRepository;
 

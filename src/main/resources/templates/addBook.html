@@ -6,12 +6,12 @@
 
 <head th:replace="common/header::common-header" />
 <body>
-	<div th:replace="common/header::navbar"></div>
+	<div th:replace="common/header::navbar"/>
 
 	<div class="container">
 		<div class="row">
 
-			<form class="form-horizontal" th:action="@{/addBook}" method="post"
+			<form class="form-horizontal" th:action="@{/add}" method="post"
 				enctype="multipart/form-data">
 
 				<fieldset>
@@ -24,8 +24,7 @@
 						<div class="col-md-5">
 							<input type="text" class="form-control" id="title"
 								required="required" placeholder="Title" name="title"
-								th:value="${book.title}"> <span class="help-block">
-								Title of the Book</span>
+								th:value="${book.title}"> 
 						</div>
 					</div>
 
@@ -63,6 +62,9 @@
 							<select class="form-control" th:value="${book.language}" id="language" name="language">
 								<option value="English">English</option>
 								<option value="French">French</option>
+								<option value="Spanish">Spanish</option>
+								<option value="Arabic">Arabic</option>
+								<option value="Fulani">Fulani</option>
 							</select>
 						</div>
 					</div>
@@ -87,8 +89,12 @@
 								<option value="Engineering"
 									th:selected="(${book.category}=='Engineering')">
 									Engineering</option>
-								<option value="art" th:selected="(${book.category}=='Art')">
-									Art</option>
+								<option value="Art" th:selected="(${book.category}=='Art')">
+									Arts</option>
+									<option value="Programming" th:selected="(${book.category}=='Programming')">
+									Programming</option>
+									<option value="Literature" th:selected="(${book.category}=='Literature')">
+									Literature</option>
 
 
 							</select>
@@ -241,10 +247,10 @@
 		          <label for="status" class="col-md-3 control-label"> *Status  </label>
 		          <div class="col-md-5">
 						<label>
-						<input type="radio" value="true"  name="active" selected="selected"> Active
+						<input type="radio" value="true"  name="active" checked="checked"> Active
 						</label>
 						<label>
-						<input type="radio" value="false" name="active"> InActive
+						<input type="radio" value="false" name="active"> In Active
 						</label>
 						
 						</div>
@@ -259,7 +265,7 @@
 						<label for="ourprice" class="col-md-3 control-label"> *Description </label>
 						<div class="col-md-5">
                             
-                            <textarea rows="5"  name="descriptioin" th:value="${book.descriptioin}" 
+                            <textarea rows="5"  name="description" th:value="${book.description}" 
                             class="form-control">
                             
                             
@@ -291,9 +297,9 @@
 
 
 
-	<div th:replace="common/header::footer"></div>
+	
 
-	<div th:replace="common/header::body-bottom-script"></div>
+	<div th:replace="common/header::body-bottom-script"/>
 
 </body>
 </html>

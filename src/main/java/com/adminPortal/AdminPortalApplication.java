@@ -8,9 +8,17 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.adminPortal.model.User;
-import com.adminPortal.model.security.Role;
-import com.adminPortal.model.security.UserRole;
+
+
+
+
+import com.adminPortal.domain.User;
+import com.adminPortal.domain.security.Role;
+import com.adminPortal.domain.security.UserRole;
+
+
+
+
 import com.adminPortal.service.UserService;
 import com.adminPortal.utility.SecurityUtility;
 
@@ -29,7 +37,7 @@ public class AdminPortalApplication implements CommandLineRunner {
 		User user1 = new User();
 		user1.setUsername("admin");
 		user1.setPassword(SecurityUtility.passwordEncoder().encode("admin"));
-		user1.setEmail("kounestore@gmail.com");
+		user1.setEmail("alsenybillodiallo@gmail.com");
 
 		Set<UserRole> userRoles = new HashSet<UserRole>();
 		Role role1 = new Role();

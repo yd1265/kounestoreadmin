@@ -1,9 +1,10 @@
-package com.adminPortal.model.security;
+package com.adminPortal.domain.security;
 
 import org.springframework.security.core.GrantedAuthority;
 
-public class Authority implements GrantedAuthority {
+public class Authority  implements GrantedAuthority{
 
+	
 	/**
 	 * 
 	 */

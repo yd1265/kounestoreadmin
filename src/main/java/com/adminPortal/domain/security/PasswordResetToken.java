@@ -1,5 +1,4 @@
-package com.adminPortal.model.security;
-
+package com.adminPortal.domain.security;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -11,16 +10,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-import com.adminPortal.model.User;
+import com.adminPortal.domain.User;
 
-
-@Entity(name="PASSWORD_RESET_TOKEN")
+@Entity
+@Table(name="password_reset_token")
 public class PasswordResetToken {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	private static final int EXPIRATION=60*24;
 	@OneToOne(targetEntity=User.class,fetch=FetchType.EAGER)
@@ -56,11 +56,11 @@ public class PasswordResetToken {
 		this.expiredDate=calculateDate(EXPIRATION);
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

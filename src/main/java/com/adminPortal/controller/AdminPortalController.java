@@ -14,13 +14,13 @@ public class AdminPortalController {
 	
 	
 	@RequestMapping("/login")
-	public String loginPage(){
+	public String login(){
 		return "login";
 	
 	}
 	
 	@RequestMapping("/home")
-	public String homePage(){
+	public String home(){
 		return "home";
 	}
 	

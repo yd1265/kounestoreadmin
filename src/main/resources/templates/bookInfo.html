@@ -15,7 +15,7 @@
 		<ul class="breadcrumb">
 		
 		<li> <a th:href="@{/bookList}">
-			<i class="fa fa-laptop" aria-hidden="true"> GoBacK </i>
+			<i class="fa fa-laptop" aria-hidden="true"> Go BacK </i>
 			</a> </li>
 
 		
@@ -68,7 +68,7 @@
 		
 			</div>
 			
-			<p><strong> Description: </strong>  <span th:utext="${book.descriptioin}"></span></p>
+			<p><strong> Description: </strong>  <span th:utext="${book.description}"></span></p>
 			
 			</div>
 		</div>
@@ -81,7 +81,7 @@
 
 
 
-	<div th:replace="common/header::footer"></div>
+	
 
 	<div th:replace="common/header::body-bottom-script"></div>
 

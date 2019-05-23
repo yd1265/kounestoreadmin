@@ -2,14 +2,22 @@ package com.adminPortal.service;
 
 import java.util.List;
 
-import com.adminPortal.model.Book;
+import com.adminPortal.domain.Book;
 
 public interface BookService {
-public List<Book> findAllBooks();
-public Book addBook(Book book);
+	public Book save(Book book);
+    public List <Book> findAll();
+	public void deleteBook(Long id);
+	public Book findOne(Long id);
+	
+	
+    
 
-public void deleteBook(Long id);
-public Book findOne(Long id);
 
-
+    
+    
+    
+    
+    
+    
 }

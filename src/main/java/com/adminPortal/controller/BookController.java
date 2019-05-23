@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.adminPortal.model.Book;
+import com.adminPortal.domain.Book;
 import com.adminPortal.service.BookService;
 
 @Controller
@@ -26,20 +26,21 @@ public class BookController {
 	
 	@Autowired
 	private BookService bookService;
-	@RequestMapping(value="/addBook",method=RequestMethod.GET)
-	public String bookPage( Model model){
+	
+	@RequestMapping(value="/add",method=RequestMethod.GET)
+	public String addBook( Model model){
 		Book book=new Book();
-		
 		model.addAttribute("book", book);
 		return "addBook";
-}
+	}
 	
-	@RequestMapping(value="/addBook",method=RequestMethod.POST)
-	public String addBook(@ModelAttribute ("book") Book book){
-		bookService.addBook(book);
-		MultipartFile imageBook=book.getBookImage();
+	@RequestMapping(value="/add",method=RequestMethod.POST)
+	public String addBookPost(
+			@ModelAttribute ("book") Book book){
+		bookService.save(book);
+		MultipartFile bookImage=book.getBookImage();
 			try {
-				byte [] bytes=imageBook.getBytes();
+				byte [] bytes=bookImage.getBytes();
 
 				String name=book.getId()+".png";
 				BufferedOutputStream stream=new BufferedOutputStream(new FileOutputStream(new File("src/main/resources/static/images/book/"+name)));
@@ -56,7 +57,7 @@ public class BookController {
 	
 	@RequestMapping(value="/bookList",method=RequestMethod.GET)
 	public String bookList(Model model){
-		List<Book> bookList=bookService.findAllBooks();
+		List<Book> bookList=bookService.findAll();
 		model.addAttribute("bookList",bookList);
 		
 		return "bookList";
@@ -117,7 +118,7 @@ public class BookController {
 	@RequestMapping(value="/bookupdate",method=RequestMethod.POST)
 
 	public String postBook(@ModelAttribute("book") Book book, Model model,HttpServletRequest request){
-		 bookService.addBook(book);
+		 bookService.save(book);
 		 MultipartFile bookImage=book.getBookImage();
 		 
                  if(!bookImage.isEmpty()){
@@ -129,11 +130,16 @@ public class BookController {
 						    stream.write(bytes);
 						    stream.close();
 						
-					} catch (IOException e) {
+					} catch (Exception e) {
 						e.printStackTrace();
 					}
                  }
 		return "redirect:bookInfo?id="+book.getId();
 		
 	}
+
+	
+	
+
 }
+
